@@ -3,156 +3,75 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nuestra Historia | Cuento Cinematográfico</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <title>Perdón, mi amorcito</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #f8fafc;
+            --soft: #cbd5e1;
+            --accent: #f472b6;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 1rem;
+            font-family: Arial, Helvetica, sans-serif;
+            background: radial-gradient(circle at top, #1e293b, var(--bg));
+            color: var(--text);
+        }
+
+        .card {
+            width: min(700px, 95vw);
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(244, 114, 182, 0.3);
+            border-radius: 18px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            color: #fda4af;
+        }
+
+        p {
+            margin: 0.9rem 0;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            line-height: 1.7;
+            color: var(--soft);
+        }
+
+        .strong {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .heart {
+            margin-top: 1rem;
+            font-size: 2rem;
+            color: var(--accent);
+        }
+    </style>
 </head>
 <body>
-    <div class="overlay-gradient"></div>
-
-    <header class="hero" id="hero">
-        <div class="hero-content cinematic-fade">
-            <div class="hero-love-scene" aria-hidden="true">
-                <div class="hero-person hero-mx">
-                    <span class="hero-head"></span>
-                    <span class="hero-flag">MX</span>
-                </div>
-                <div class="hero-path">
-                    <span class="path-heart">❤</span>
-                    <span class="path-heart">❤</span>
-                    <span class="path-heart">❤</span>
-                </div>
-                <div class="hero-person hero-it">
-                    <span class="hero-head"></span>
-                    <span class="hero-flag">IT</span>
-                </div>
-            </div>
-            <h1>Nuestra Historia</h1>
-            <p class="subtitle">Un cuento real de amor entre Un Mexicano y una Italiana</p>
-            <button id="musicToggle" class="music-btn" aria-label="Activar o desactivar música">
-                ♪ Música: OFF
-            </button>
-        </div>
-    </header>
-
-    <main>
-        <section class="chapter scene-1" data-chapter="Capítulo 1">
-            <div class="chapter-card reveal">
-                <h2>Capítulo 1: El día que te vi en Valle de Bravo</h2>
-                <p class="typewriter" data-text="Cuando me enteré de que una italiana venía de intercambio, jamás imaginé que sería el amor de mi vida. Nunca pensé sentir un amor tan fuerte por alguien, y para empezar ni siquiera creía en el amor a distancia."></p>
-            </div>
-            <div class="characters">
-                <div class="character boy" aria-hidden="true"></div>
-                <div class="character girl" aria-hidden="true"></div>
-            </div>
-        </section>
-
-        <section class="chapter scene-2" data-chapter="Capítulo 2">
-            <div class="chapter-card reveal">
-                <h2>Capítulo 2: La sonrisa que cambió todo</h2>
-                <p class="typewriter" data-text="Te conocí de noche, en una reunión que organicé junto con mi amigo Andrés. Eras italiana y habías venido de intercambio con una asociación; desde ese momento, tu sonrisa dulce, tu cabello, tus ojos y tu belleza me enamoraron por completo."></p>
-            </div>
-            <div class="night-meeting reveal" aria-hidden="true">
-                <div class="moon"></div>
-                <div class="meeting-lights">
-                    <span class="light"></span>
-                    <span class="light"></span>
-                    <span class="light"></span>
-                    <span class="light"></span>
-                    <span class="light"></span>
-                </div>
-                <div class="meeting-table"></div>
-                <p class="meeting-note">Reunión nocturna en casa de Dan prots ✨</p>
-            </div>
-        </section>
-
-        <section class="chapter scene-3" data-chapter="Capítulo 3">
-            <div class="chapter-card reveal">
-                <h2>Capítulo 3: La distancia no fue obstáculo</h2>
-                <p class="typewriter" data-text="Cuando entendí todo lo que sentía por ti, supe que la distancia entre México e Italia no sería un límite. Nuestro amor se volvió más grande que cualquier frontera."></p>
-            </div>
-            <div class="world-map reveal" aria-hidden="true">
-                <svg class="map-silhouette" viewBox="0 0 1000 500" preserveAspectRatio="none">
-                    <path class="map-land" d="M88 122 L132 102 L172 110 L205 138 L196 170 L164 196 L142 226 L110 232 L76 214 L60 180 L62 148 Z"></path>
-                    <path class="map-land" d="M198 236 L236 246 L256 280 L250 324 L220 360 L190 392 L168 424 L148 404 L154 362 L172 332 L182 292 Z"></path>
-                    <path class="map-land" d="M422 136 L466 122 L506 132 L526 154 L514 176 L478 188 L446 180 L426 160 Z"></path>
-                    <path class="map-land" d="M452 196 L502 204 L536 240 L530 292 L504 334 L470 342 L444 306 L432 258 Z"></path>
-                    <path class="map-land" d="M546 148 L604 128 L664 134 L730 154 L786 188 L842 220 L860 256 L824 270 L780 262 L744 272 L714 300 L692 326 L656 322 L628 302 L594 284 L572 254 L548 224 Z"></path>
-                    <path class="map-land" d="M746 350 L788 342 L822 360 L848 390 L832 416 L788 426 L754 412 L734 382 Z"></path>
-                    <path class="map-land island" d="M398 214 L414 208 L422 218 L412 228 L398 224 Z"></path>
-                    <path class="map-land island" d="M714 214 L728 208 L736 218 L726 228 L712 224 Z"></path>
-                </svg>
-
-                <svg class="flight-route" viewBox="0 0 100 50" preserveAspectRatio="none">
-                    <path d="M18,34 C40,10 62,10 81,20"></path>
-                </svg>
-
-                <div class="city city-cdmx">CDMX</div>
-                <div class="city city-italy">Italia</div>
-                <div class="plane" id="chapter3Plane">✈</div>
-            </div>
-        </section>
-
-        <section class="chapter scene-4" data-chapter="Capítulo 4">
-            <div class="chapter-card reveal">
-                <h2>Capítulo 4: Crucé el mundo por amor</h2>
-                <p class="typewriter" data-text="Nunca pensé enamorarme tanto, al punto de viajar desde Valle de Bravo hasta Italia por ti. Crucé el mundo por amor, con el corazón latiendo en cada aeropuerto, en cada vuelo, en cada kilómetro."></p>
-            </div>
-        </section>
-
-        <section class="chapter scene-5" data-chapter="Capítulo 5">
-            <div class="chapter-card reveal">
-                <h2>Capítulo 5: Nuestro futuro</h2>
-                <p class="typewriter" data-text="Ahora sueño con seguir escribiendo nuestra historia: más abrazos, más viajes, más risas y más amaneceres juntos. Lo mejor de nuestro cuento apenas comienza."></p>
-            </div>
-            <div class="future-vision reveal" aria-hidden="true">
-                <div class="future-cloud cloud-left"></div>
-                <div class="future-cloud cloud-right"></div>
-
-                <div class="future-house">
-                    <div class="roof"></div>
-                    <div class="body"></div>
-                    <div class="door"></div>
-                    <div class="window window-left"></div>
-                    <div class="window window-right"></div>
-                    <div class="heart-home">❤</div>
-                </div>
-
-                <div class="future-family">
-                    <div class="member dad"></div>
-                    <div class="member mom"></div>
-                    <div class="member kid kid-1"></div>
-                    <div class="member kid kid-2"></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="chapter final-scene scene-6">
-            <div class="chapter-card reveal final-card">
-                <h2>Entonces mi amor?</h2>
-                <p>Dos almas, dos países, un solo destino.</p>
-                <p class="final-question">¿Seguimos escribiendo nuestro futuro juntos?</p>
-                <div class="choice-buttons">
-                    <button id="yesButton" class="love-btn">Sí</button>
-                    <button id="noButton" class="love-btn">No</button>
-                </div>
-                <div id="loveMessage" class="love-message" aria-live="polite">Te amo</div>
-            </div>
-            <div id="starsContainer" class="stars-container" aria-hidden="true"></div>
-        </section>
+    <main class="card">
+        <h1>Perdón, mi amorcito 💖</h1>
+        <p>Perdóname por hacerte enojar y por estar de malas.</p>
+        <p>Sé que te mereces mi mejor versión, más paciencia y más cariño.</p>
+        <p class="strong">Nada de eso cambia lo que siento por ti.</p>
+        <p class="strong">No dejo de amarte ni un poquito.</p>
+        <p>Te amo muchísimo y quiero hacer las cosas mejor por nosotros.</p>
+        <div class="heart">❤</div>
     </main>
-
-    <footer>
-        <p>Hecho con amor • Flask + HTML + CSS + JavaScript</p>
-        <p class="run-help">Ejecución local: <strong>pip install flask</strong> y <strong>python app.py</strong></p>
-    </footer>
-
-    <audio id="bgMusic" loop autoplay muted playsinline>
-        <source src="{{ url_for('static', filename='music.mp3') }}?v=2" type="audio/mpeg">
-    </audio>
-
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
