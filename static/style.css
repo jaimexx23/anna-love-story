@@ -1,0 +1,882 @@
+:root {
+    --bg-night: #0e1a2b;
+    --text-soft: #f8f5ef;
+    --gold: #f0c987;
+    --rose: #f8a7b3;
+    --card: rgba(18, 25, 42, 0.58);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg-night);
+    color: var(--text-soft);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.overlay-gradient {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(248, 167, 179, 0.15), transparent 45%),
+        radial-gradient(circle at 80% 90%, rgba(240, 201, 135, 0.14), transparent 40%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.45));
+}
+
+main,
+header,
+footer {
+    position: relative;
+    z-index: 2;
+}
+
+.hero {
+    min-height: 70vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(180deg, rgba(255, 180, 120, 0.25), rgba(14, 26, 43, 0.6));
+}
+
+.hero-content {
+    width: min(980px, 95vw);
+}
+
+.hero-love-scene {
+    margin: 0 auto 1.1rem;
+    width: min(760px, 92vw);
+    min-height: 140px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 18px;
+    background: radial-gradient(circle at 50% 40%, rgba(255, 220, 155, 0.2), rgba(35, 48, 84, 0.55));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-person {
+    width: 82px;
+    height: 116px;
+    border-radius: 40px;
+    position: relative;
+    animation: float 3.6s ease-in-out infinite;
+}
+
+.hero-mx {
+    background: linear-gradient(180deg, #62c18a, #2f7d59);
+}
+
+.hero-it {
+    background: linear-gradient(180deg, #f1a7c6, #b75f86);
+    animation-delay: 0.8s;
+}
+
+.hero-head {
+    position: absolute;
+    left: 10px;
+    top: -35px;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: #ffd9b3;
+}
+
+.hero-flag {
+    position: absolute;
+    left: 50%;
+    bottom: -18px;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #fff9e4;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+    padding: 0.16rem 0.56rem;
+}
+
+.hero-path {
+    width: min(420px, 55vw);
+    height: 2px;
+    border-top: 2px dashed rgba(255, 230, 165, 0.85);
+    position: relative;
+    animation: pulseLine 2s infinite;
+}
+
+.path-heart {
+    position: absolute;
+    top: -16px;
+    color: #ffd6e7;
+    text-shadow: 0 0 10px rgba(255, 162, 201, 0.7);
+    animation: heartFloat 2.4s ease-in-out infinite;
+}
+
+.path-heart:nth-child(1) {
+    left: 20%;
+}
+
+.path-heart:nth-child(2) {
+    left: 48%;
+    animation-delay: 0.4s;
+}
+
+.path-heart:nth-child(3) {
+    left: 74%;
+    animation-delay: 0.8s;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    margin-top: 0.8rem;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    opacity: 0.95;
+}
+
+.music-btn,
+.love-btn {
+    margin-top: 1.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--text-soft);
+    padding: 0.7rem 1.2rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.music-btn:hover,
+.love-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.chapter {
+    min-height: 80vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    padding: 3rem 1rem;
+    position: relative;
+}
+
+.chapter-card {
+    width: min(900px, 92vw);
+    background: var(--card);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    padding: clamp(1.2rem, 3vw, 2.2rem);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+}
+
+.chapter-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    color: var(--gold);
+    margin-bottom: 0.7rem;
+}
+
+.typewriter {
+    font-size: clamp(1rem, 2.4vw, 1.2rem);
+    min-height: 5.8rem;
+}
+
+.characters {
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.character {
+    width: 85px;
+    height: 140px;
+    border-radius: 40px;
+    position: relative;
+    animation: float 4s ease-in-out infinite;
+}
+
+.boy {
+    background: linear-gradient(180deg, #5fa8d3, #2b5876);
+}
+
+.girl {
+    background: linear-gradient(180deg, #f8a7b3, #c4717a);
+    animation-delay: 0.8s;
+}
+
+.character::before {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    top: -35px;
+    left: 7px;
+    background: #ffd9b3;
+}
+
+.world-map {
+    margin-top: 1.1rem;
+    width: min(900px, 92vw);
+    height: clamp(190px, 34vw, 290px);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: radial-gradient(circle at 50% 35%, rgba(139, 185, 211, 0.2), rgba(13, 26, 48, 0.72));
+    position: relative;
+    overflow: hidden;
+}
+
+.map-silhouette {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.84;
+}
+
+.map-land {
+    fill: rgba(164, 211, 170, 0.32);
+    stroke: rgba(207, 236, 210, 0.35);
+    stroke-width: 2;
+}
+
+.map-land.island {
+    opacity: 0.78;
+}
+
+.flight-route {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.flight-route path {
+    fill: none;
+    stroke: rgba(255, 231, 170, 0.85);
+    stroke-width: 0.8;
+    stroke-linecap: round;
+    stroke-dasharray: 2.2 1.4;
+    animation: pulseLine 2s infinite;
+}
+
+.city {
+    position: absolute;
+    font-size: clamp(0.75rem, 1.7vw, 0.95rem);
+    font-weight: 700;
+    color: #fff0c5;
+    text-shadow: 0 0 10px rgba(255, 215, 131, 0.45);
+}
+
+.city::before {
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ffd578;
+    box-shadow: 0 0 12px rgba(255, 213, 120, 0.7);
+    left: -14px;
+    top: 6px;
+}
+
+.city-cdmx {
+    left: 16%;
+    top: 66%;
+}
+
+.city-italy {
+    left: 76%;
+    top: 40%;
+}
+
+.plane {
+    position: absolute;
+    left: 16%;
+    top: 66%;
+    font-size: clamp(1.15rem, 2.3vw, 1.7rem);
+    transform: translate(-50%, -50%) rotate(-12deg);
+    filter: drop-shadow(0 0 8px rgba(255, 231, 170, 0.65));
+    opacity: 0;
+}
+
+.scene-3.flight-active .plane {
+    opacity: 1;
+    animation: flyToItaly 4.8s ease-in-out infinite;
+}
+
+.night-meeting {
+    margin-top: 1.1rem;
+    width: min(900px, 92vw);
+    min-height: clamp(160px, 25vw, 210px);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: radial-gradient(circle at 70% 25%, rgba(144, 167, 225, 0.28), rgba(19, 27, 52, 0.78));
+    position: relative;
+    overflow: hidden;
+}
+
+.night-meeting .moon {
+    position: absolute;
+    right: 9%;
+    top: 14%;
+    width: clamp(24px, 4vw, 40px);
+    height: clamp(24px, 4vw, 40px);
+    border-radius: 50%;
+    background: #fff1c5;
+    box-shadow: 0 0 22px rgba(255, 234, 174, 0.65);
+}
+
+.meeting-lights {
+    position: absolute;
+    top: 26%;
+    left: 10%;
+    right: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.meeting-lights .light {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffd37d;
+    box-shadow: 0 0 14px rgba(255, 210, 123, 0.9);
+    animation: lanternGlow 1.8s ease-in-out infinite;
+}
+
+.meeting-lights .light:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.meeting-lights .light:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.meeting-lights .light:nth-child(4) {
+    animation-delay: 0.75s;
+}
+
+.meeting-lights .light:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.meeting-table {
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    bottom: 22%;
+    height: 14px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(190, 134, 98, 0.9), rgba(137, 91, 65, 0.9));
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+.meeting-note {
+    position: absolute;
+    left: 50%;
+    bottom: 8%;
+    transform: translateX(-50%);
+    color: #ffe6b0;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-shadow: 0 0 10px rgba(255, 217, 141, 0.55);
+    animation: notePulse 2.2s ease-in-out infinite;
+}
+
+.future-vision {
+    margin-top: 1.2rem;
+    width: min(900px, 92vw);
+    min-height: clamp(210px, 36vw, 300px);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: linear-gradient(180deg, rgba(255, 219, 164, 0.2), rgba(37, 64, 96, 0.45));
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    align-items: end;
+    justify-items: center;
+    padding-bottom: 1rem;
+}
+
+.future-cloud {
+    position: absolute;
+    width: 120px;
+    height: 46px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.2);
+    filter: blur(0.3px);
+}
+
+.future-cloud::before,
+.future-cloud::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.24);
+}
+
+.future-cloud::before {
+    width: 40px;
+    height: 40px;
+    left: 18px;
+    top: -20px;
+}
+
+.future-cloud::after {
+    width: 34px;
+    height: 34px;
+    right: 22px;
+    top: -14px;
+}
+
+.cloud-left {
+    top: 16%;
+    left: 10%;
+    animation: driftCloud 12s ease-in-out infinite;
+}
+
+.cloud-right {
+    top: 20%;
+    right: 10%;
+    animation: driftCloud 14s ease-in-out infinite reverse;
+}
+
+.future-house {
+    position: absolute;
+    right: 13%;
+    bottom: 16%;
+    width: clamp(120px, 16vw, 170px);
+    height: clamp(105px, 14vw, 145px);
+}
+
+.future-house .roof {
+    position: absolute;
+    left: 8%;
+    top: 0;
+    width: 84%;
+    height: 40%;
+    background: linear-gradient(180deg, #f1ab84, #bf6f5f);
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.future-house .body {
+    position: absolute;
+    left: 16%;
+    bottom: 0;
+    width: 68%;
+    height: 62%;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #ffe6c8, #e4b482);
+}
+
+.future-house .door {
+    position: absolute;
+    bottom: 0;
+    left: 43%;
+    width: 14%;
+    height: 30%;
+    border-radius: 8px 8px 0 0;
+    background: #9b5f4a;
+}
+
+.future-house .window {
+    position: absolute;
+    width: 12%;
+    height: 12%;
+    background: #9bd2ff;
+    border-radius: 4px;
+    top: 54%;
+}
+
+.future-house .window-left {
+    left: 26%;
+}
+
+.future-house .window-right {
+    right: 26%;
+}
+
+.heart-home {
+    position: absolute;
+    top: -6%;
+    left: 45%;
+    font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+    animation: heartPulse 1.8s ease-in-out infinite;
+}
+
+.future-family {
+    position: absolute;
+    left: 14%;
+    bottom: 14%;
+    display: flex;
+    align-items: flex-end;
+    gap: 0.7rem;
+}
+
+.member {
+    border-radius: 30px;
+    position: relative;
+    animation: familyBounce 2.8s ease-in-out infinite;
+}
+
+.member::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: #ffd8b2;
+}
+
+.dad,
+.mom {
+    width: 32px;
+    height: 64px;
+}
+
+.dad {
+    background: linear-gradient(180deg, #67a8d1, #2d5e7c);
+}
+
+.mom {
+    background: linear-gradient(180deg, #f7a7b5, #b7607d);
+    animation-delay: 0.35s;
+}
+
+.dad::before,
+.mom::before {
+    width: 26px;
+    height: 26px;
+    top: -15px;
+    left: 3px;
+}
+
+.kid {
+    width: 24px;
+    height: 42px;
+    background: linear-gradient(180deg, #ffe299, #d08d5f);
+}
+
+.kid::before {
+    width: 18px;
+    height: 18px;
+    top: -11px;
+    left: 3px;
+}
+
+.kid-1 {
+    animation-delay: 0.6s;
+}
+
+.kid-2 {
+    animation-delay: 0.95s;
+}
+
+.scene-1 {
+    background: linear-gradient(180deg, rgba(252, 168, 110, 0.35), rgba(76, 93, 144, 0.5));
+}
+
+.scene-2 {
+    background: linear-gradient(180deg, rgba(24, 26, 55, 0.72), rgba(90, 62, 100, 0.6));
+}
+
+.scene-3 {
+    background: linear-gradient(180deg, rgba(16, 34, 69, 0.72), rgba(53, 94, 131, 0.5));
+}
+
+.scene-4 {
+    background: linear-gradient(180deg, rgba(84, 108, 143, 0.58), rgba(30, 36, 58, 0.7));
+}
+
+.scene-5 {
+    background: linear-gradient(180deg, rgba(253, 191, 134, 0.3), rgba(93, 67, 116, 0.6));
+}
+
+.scene-6 {
+    background: radial-gradient(circle at top, rgba(142, 113, 182, 0.35), rgba(7, 10, 25, 0.95));
+}
+
+.final-card {
+    text-align: center;
+}
+
+.final-question {
+    margin-top: 1.1rem;
+    font-size: clamp(1rem, 2.6vw, 1.25rem);
+    color: #ffe8bf;
+}
+
+.choice-buttons {
+    margin-top: 0.9rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.love-message {
+    margin-top: 1.2rem;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 10vw, 5rem);
+    opacity: 0;
+    transform: scale(0.6);
+    transition: all 0.7s ease;
+    color: #ffd8e6;
+    text-shadow: 0 0 20px rgba(255, 173, 211, 0.55);
+}
+
+.love-message.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.love-message.long-text {
+    max-width: min(860px, 92vw);
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(1rem, 2.3vw, 1.45rem);
+    line-height: 1.55;
+    color: #ffe8f1;
+}
+
+.stars-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #fff6d6;
+    box-shadow: 0 0 10px rgba(255, 240, 190, 0.9);
+    animation: twinkle 2.5s ease-in-out infinite;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cinematic-fade {
+    animation: fadeIn 1.2s ease;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 1rem 2rem;
+    background: rgba(0, 0, 0, 0.35);
+    font-size: 0.95rem;
+}
+
+.run-help {
+    margin-top: 0.3rem;
+    opacity: 0.9;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+
+@keyframes pulseLine {
+    0%, 100% { opacity: 0.65; }
+    50% { opacity: 1; }
+}
+
+@keyframes heartFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.85;
+    }
+    50% {
+        transform: translateY(-8px) scale(1.14);
+        opacity: 1;
+    }
+}
+
+@keyframes lanternGlow {
+    0%, 100% {
+        opacity: 0.45;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.16);
+    }
+}
+
+@keyframes notePulse {
+    0%, 100% {
+        opacity: 0.65;
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-2px);
+    }
+}
+
+@keyframes flyToItaly {
+    0% {
+        left: 16%;
+        top: 66%;
+        transform: translate(-50%, -50%) rotate(-5deg) scale(1);
+    }
+    18% {
+        left: 26%;
+        top: 54%;
+        transform: translate(-50%, -50%) rotate(-14deg) scale(1.02);
+    }
+    40% {
+        left: 43%;
+        top: 34%;
+        transform: translate(-50%, -50%) rotate(-6deg) scale(1.04);
+    }
+    68% {
+        left: 63%;
+        top: 28%;
+        transform: translate(-50%, -50%) rotate(6deg) scale(1.04);
+    }
+    100% {
+        left: 76%;
+        top: 40%;
+        transform: translate(-50%, -50%) rotate(15deg) scale(1.02);
+    }
+}
+
+@keyframes driftCloud {
+    0%, 100% {
+        transform: translateX(0);
+        opacity: 0.65;
+    }
+    50% {
+        transform: translateX(20px);
+        opacity: 0.9;
+    }
+}
+
+@keyframes familyBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes heartPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.22);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 768px) {
+    .hero-love-scene {
+        min-height: 125px;
+        padding: 0.8rem;
+    }
+
+    .hero-person {
+        width: 64px;
+        height: 92px;
+    }
+
+    .hero-head {
+        width: 50px;
+        height: 50px;
+        left: 7px;
+        top: -28px;
+    }
+
+    .hero-path {
+        width: min(270px, 48vw);
+    }
+
+    .characters {
+        gap: 1rem;
+    }
+
+    .character {
+        width: 72px;
+        height: 120px;
+    }
+
+    .character::before {
+        width: 60px;
+        height: 60px;
+        left: 6px;
+        top: -28px;
+    }
+
+    .world-map {
+        height: clamp(180px, 45vw, 250px);
+    }
+
+    .city-cdmx {
+        left: 14%;
+        top: 68%;
+    }
+
+    .meeting-note {
+        font-size: 0.85rem;
+        width: 92%;
+        text-align: center;
+    }
+
+    .city-italy {
+        left: 75%;
+        top: 39%;
+    }
+
+    .future-house {
+        right: 8%;
+        bottom: 18%;
+    }
+
+    .future-family {
+        left: 8%;
+        gap: 0.45rem;
+    }
+}
