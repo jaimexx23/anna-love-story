@@ -1,14 +1,13 @@
-# Historia Romántica Cinematográfica con Flask
+# Página de Perdón con Flask
 
-Proyecto web romántico estilo cuento animado cinematográfico, desarrollado con Python + Flask.
+Proyecto web romántico de disculpa, desarrollado con Python + Flask.
 
 ## Estructura
 
 - `app.py`
 - `templates/index.html`
-- `static/style.css`
-- `static/script.js`
-- `static/music.mp3` (placeholder)
+- `docs/index.html` (versión estática para GitHub Pages)
+- `render.yaml` (despliegue en Render)
 - `requirements.txt`
 - `Procfile`
 
@@ -23,11 +22,20 @@ Luego abre en tu navegador:
 
 - http://127.0.0.1:5000
 
-## Despliegue en Render o Railway
+## Despliegue en Render
 
-- Incluye `requirements.txt` para instalar dependencias.
-- Incluye `Procfile` para iniciar con Gunicorn.
-- `app.py` usa el puerto dinámico vía variable de entorno `PORT`.
+1. Entra a [Render Dashboard](https://dashboard.render.com/)
+2. Clic en **New +** → **Blueprint**
+3. Conecta el repo `jaimexx23/anna-love-story`
+4. Render detectará `render.yaml` y creará el servicio web
+5. Espera el primer deploy y abre el URL público generado
+
+La app usa `requirements.txt`, `Procfile` y puerto dinámico por variable `PORT`.
+
+## Link público rápido con GitHub Pages
+
+- Ruta servida: `docs/index.html`
+- URL final: `https://jaimexx23.github.io/anna-love-story/`
 
 ## Nota
 
